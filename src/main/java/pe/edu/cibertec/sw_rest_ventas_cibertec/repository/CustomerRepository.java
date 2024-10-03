@@ -1,6 +1,8 @@
 package pe.edu.cibertec.sw_rest_ventas_cibertec.repository;
 
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
@@ -32,6 +34,8 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
     List<CustomerCountCountryProjection> listaPaisesConCantidadClientes();
 
 
+    @Transactional
+    @Modifying
     @Procedure(procedureName = "GenerateAndInsertCustomer")
     void registrarCliente(
             @Param("companyName") String companyName,
