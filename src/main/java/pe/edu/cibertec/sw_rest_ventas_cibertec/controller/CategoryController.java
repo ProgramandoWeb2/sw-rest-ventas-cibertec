@@ -6,13 +6,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.exception.ResourceNotFoundException;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.model.Category;
-import pe.edu.cibertec.sw_rest_ventas_cibertec.service.interfaz.ICategoryService;
+import pe.edu.cibertec.sw_rest_ventas_cibertec.service.ICategoryService;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("api/v1/category")
+@RequestMapping(path = "api/v1/category")
 public class CategoryController {
     private final ICategoryService categoryService;
 
@@ -36,7 +36,7 @@ public class CategoryController {
         return new ResponseEntity<>(category, HttpStatus.OK);
     }
     //localhost:8080/api/v1/category?categoryName=
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<Category> obtenerCategoriaXNombre(
             @RequestParam String categoryName
     ){

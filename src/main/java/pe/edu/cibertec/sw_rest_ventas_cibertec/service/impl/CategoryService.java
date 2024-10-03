@@ -1,10 +1,10 @@
-package pe.edu.cibertec.sw_rest_ventas_cibertec.service.implementacion;
+package pe.edu.cibertec.sw_rest_ventas_cibertec.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.model.Category;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.repository.CategoryRepository;
-import pe.edu.cibertec.sw_rest_ventas_cibertec.service.interfaz.ICategoryService;
+import pe.edu.cibertec.sw_rest_ventas_cibertec.service.ICategoryService;
 
 import java.util.List;
 import java.util.Optional;
