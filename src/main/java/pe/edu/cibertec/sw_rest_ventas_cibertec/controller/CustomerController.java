@@ -3,10 +3,7 @@ package pe.edu.cibertec.sw_rest_ventas_cibertec.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.dto.CustomerDto;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.dto.GenericResponseDto;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.service.ICustomerService;
@@ -35,6 +32,24 @@ public class CustomerController {
                     .correcto(true)
                     .mensaje("Listado de clientes por ciudad")
                     .respuesta(customerDtoList).build(), HttpStatus.OK);
+        }
+    }
+
+    @PostMapping("")
+    public ResponseEntity<GenericResponseDto<String>> registrarCliente(
+            @RequestBody CustomerDto customerDto
+    ){
+        try{
+            customerService.registrarCustomer(customerDto);
+            return new ResponseEntity<>(GenericResponseDto.
+                    <String>builder().correcto(true)
+                    .mensaje("Cliente registrado correctamente")
+                    .build(), HttpStatus.CREATED);
+        }catch (Exception ex){
+            return new ResponseEntity<>(GenericResponseDto.
+                    <String>builder().correcto(false)
+                    .mensaje("Cliente NO registrado")
+                    .build(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

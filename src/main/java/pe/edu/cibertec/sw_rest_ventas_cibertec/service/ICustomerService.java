@@ -17,4 +17,6 @@ public interface ICustomerService {
             String companyname);
     List<CustomerDto> buscarClientesXCityCountry(String city, String country);
     List<CustomerCountCountryProjection> listaPaisesConCantidadClientes();
+
+    void registrarCustomer(CustomerDto customerDto);
 }

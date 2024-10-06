@@ -81,4 +81,21 @@ public class CustomerService implements ICustomerService {
     public List<CustomerCountCountryProjection> listaPaisesConCantidadClientes() {
         return customerRepository.listaPaisesConCantidadClientes();
     }
+
+    @Override
+    public void registrarCustomer(CustomerDto customerDto) {
+        customerRepository.registrarCliente(customerDto.getCompanyname(),
+                customerDto.getContactname(),
+                customerDto.getContacttitle(),
+                customerDto.getAddress(),
+                customerDto.getCity(),
+                customerDto.getRegion(),
+                customerDto.getPostalcode(),
+                customerDto.getCountry(),
+                customerDto.getPhone(),
+                customerDto.getFax());
+
+    }
+
+
 }

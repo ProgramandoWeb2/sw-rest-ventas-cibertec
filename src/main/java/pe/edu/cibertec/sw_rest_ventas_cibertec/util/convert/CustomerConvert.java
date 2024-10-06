@@ -21,4 +21,19 @@ public class CustomerConvert {
                 .postalcode(customer.getPostalcode())
                 .build();
     }
+
+    public Customer convertirCustomerDtoACustomer(CustomerDto customerDto){
+        Customer customer = new Customer();
+        customer.setCity(customerDto.getCity());
+        customer.setCountry(customerDto.getCountry());
+        customer.setCompanyname(customerDto.getCompanyname());
+        customer.setAddress(customerDto.getAddress());
+        customer.setFax(customerDto.getFax());
+        customer.setContactname(customerDto.getContactname());
+        customer.setContacttitle(customerDto.getContacttitle());
+        customer.setPhone(customerDto.getPhone());
+        customer.setPostalcode(customerDto.getPostalcode());
+        customer.setRegion(customerDto.getRegion());
+        return customer;
+    }
 }

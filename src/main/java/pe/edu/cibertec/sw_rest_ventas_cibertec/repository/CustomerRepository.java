@@ -33,6 +33,12 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
             "FROM Customer c GROUP BY c.country")
     List<CustomerCountCountryProjection> listaPaisesConCantidadClientes();
 
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE customers SET address=:address WHERE customerid=:customerid")
+    void actualizarDireccionCliente(@Param("address") String address,
+                                    @Param("customerid") String customerid);
+
 
     @Transactional
     @Modifying
