@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import pe.edu.idat.app_ventas_idat.model.bd.pk.ProductOrderId;
+import pe.edu.cibertec.sw_rest_ventas_cibertec.model.pk.ProductOrderId;
 
 @Getter
 @Setter
