@@ -35,7 +35,8 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
 
     @Transactional
     @Modifying
-    @Query(value = "UPDATE customers SET address=:address WHERE customerid=:customerid")
+    @Query(value = "UPDATE customers SET address=:address WHERE customerid=:customerid",
+    nativeQuery = true)
     void actualizarDireccionCliente(@Param("address") String address,
                                     @Param("customerid") String customerid);
 
