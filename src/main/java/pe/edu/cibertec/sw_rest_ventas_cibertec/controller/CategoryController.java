@@ -9,7 +9,8 @@ import pe.edu.cibertec.sw_rest_ventas_cibertec.model.Category;
 import pe.edu.cibertec.sw_rest_ventas_cibertec.service.ICategoryService;
 
 import java.util.List;
-
+//@CrossOrigin(origins = {"http://cibertec.edu.pe","http://cibertec-ventas.edu.pe"})
+//@CrossOrigin(origins = "*", methods = {RequestMethod.GET})
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "api/v1/category")
